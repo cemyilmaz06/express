@@ -53,14 +53,21 @@ const HOST = process.env.HOST || '127.0.0.1'
 // })
 
 
-app.all('/',(req, res)=> {
+// app.all('/',(req, res)=> {
 
-    // res.send('welcome to express')
-    res.send({
-        message: 'run all'
-    })
+//     // res.send('welcome to express')
+//     res.send({
+//         message: 'run all'
+//     })
     
-})
+// })
+
+
+app.route('/route')
+.get((req,res)=> { res.send ({ message: 'get' })})
+.post((req,res)=> { res.send ({ message: 'post' })})
+.put((req,res)=> { res.send ({ message: 'put' })})
+.delete((req,res)=> { res.send ({ message: 'delete' })})
 
 
 
