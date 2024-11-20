@@ -63,12 +63,19 @@ const HOST = process.env.HOST || '127.0.0.1'
 // })
 
 
-app.route('/route')
-.get((req,res)=> { res.send ({ message: 'get' })})
-.post((req,res)=> { res.send ({ message: 'post' })})
-.put((req,res)=> { res.send ({ message: 'put' })})
-.delete((req,res)=> { res.send ({ message: 'delete' })})
+// app.route('/route')
+// .get((req,res)=> { res.send ({ message: 'get' })})
+// .post((req,res)=> { res.send ({ message: 'post' })})
+// .put((req,res)=> { res.send ({ message: 'put' })})
+// .delete((req,res)=> { res.send ({ message: 'delete' })})
 
+
+/* ------------------------------------------------------- */
+app.get('/', (req, res) => res.send('/ = root (home)'))
+
+
+app.get('/abc(x)?123', (req, res) => res.send('/abc(x)123'))
+app.get('/abc*123', (req, res)=> res.send('/abc*123'))
 
 
 /* ------------------------------------------------------- */
